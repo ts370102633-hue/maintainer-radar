@@ -1,6 +1,6 @@
 # Health Score
 
-Overall: **98/100**
+Overall: **99/100**
 
 Grade: **ready**
 
@@ -11,7 +11,7 @@ Grade: **ready**
 | Documentation | 28/28 |
 | Build and package | 16/16 |
 | Security and privacy | 25/25 |
-| Git | 13/15 |
+| Git | 14/15 |
 | CI | 5/5 |
 | Release readiness | 8/8 |
 
@@ -33,7 +33,7 @@ Grade: **ready**
 | Git repository | pass | 5/5 | Repository is under git. |
 | Remote origin | pass | 3/3 | origin: git@github.com:ts370102633-hue/maintainer-radar.git |
 | Release tag | pass | 4/4 | At least one git tag exists. |
-| Commit history | warn | 1/3 | 1 commits detected. |
+| Commit history | warn | 2/3 | 2 commits detected. |
 | GitHub Actions workflow | pass | 5/5 | .github/workflows is present. |
 | Release notes surface | pass | 5/5 | Release notes or changelog found. |
 | Roadmap | pass | 3/3 | docs/roadmap.md found. |
