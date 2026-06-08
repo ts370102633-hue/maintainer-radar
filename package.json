@@ -30,6 +30,14 @@
   ],
   "author": "ts370102633-hue",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ts370102633-hue/maintainer-radar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ts370102633-hue/maintainer-radar/issues"
+  },
+  "homepage": "https://github.com/ts370102633-hue/maintainer-radar#readme",
   "devDependencies": {
     "@types/node": "^20.19.0",
     "typescript": "^5.8.3"

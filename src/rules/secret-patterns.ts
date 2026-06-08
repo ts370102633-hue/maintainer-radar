@@ -34,10 +34,8 @@ export const secretPatterns: SecretPattern[] = [
 
 export const sensitiveFilePatterns = [
   /^\.env$/,
-  /^\.env\./,
   /cookie/i,
   /credential/i,
-  /secret/i,
   /token/i,
   /private/i,
   /workspace\.json$/i,

@@ -1,0 +1,205 @@
+{
+  "generatedAt": "2026-06-08T12:03:15.936Z",
+  "repoPath": "/Users/shendekun/maintainer-radar",
+  "score": {
+    "total": 98,
+    "grade": "ready",
+    "buckets": [
+      {
+        "name": "Documentation",
+        "score": 28,
+        "maxScore": 28
+      },
+      {
+        "name": "Build and package",
+        "score": 16,
+        "maxScore": 16
+      },
+      {
+        "name": "Security and privacy",
+        "score": 25,
+        "maxScore": 25
+      },
+      {
+        "name": "Git",
+        "score": 13,
+        "maxScore": 15
+      },
+      {
+        "name": "CI",
+        "score": 5,
+        "maxScore": 5
+      },
+      {
+        "name": "Release readiness",
+        "score": 8,
+        "maxScore": 8
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "docs:README.md",
+      "label": "README",
+      "status": "pass",
+      "points": 8,
+      "maxPoints": 8,
+      "detail": "README.md is present."
+    },
+    {
+      "id": "docs:LICENSE",
+      "label": "LICENSE",
+      "status": "pass",
+      "points": 5,
+      "maxPoints": 5,
+      "detail": "LICENSE is present."
+    },
+    {
+      "id": "docs:SECURITY.md",
+      "label": "Security policy",
+      "status": "pass",
+      "points": 5,
+      "maxPoints": 5,
+      "detail": "SECURITY.md is present."
+    },
+    {
+      "id": "docs:CONTRIBUTING.md",
+      "label": "Contributor guide",
+      "status": "pass",
+      "points": 4,
+      "maxPoints": 4,
+      "detail": "CONTRIBUTING.md is present."
+    },
+    {
+      "id": "docs:.env.example",
+      "label": "Environment example",
+      "status": "pass",
+      "points": 3,
+      "maxPoints": 3,
+      "detail": ".env.example is present."
+    },
+    {
+      "id": "docs:readme-content",
+      "label": "README maintenance usefulness",
+      "status": "pass",
+      "points": 3,
+      "maxPoints": 3,
+      "detail": "README signals: install=true, usage=true, maintainer=true."
+    },
+    {
+      "id": "package:build",
+      "label": "Build script",
+      "status": "pass",
+      "points": 5,
+      "maxPoints": 5,
+      "detail": "build script: tsc -p tsconfig.json"
+    },
+    {
+      "id": "package:test",
+      "label": "Test script",
+      "status": "pass",
+      "points": 5,
+      "maxPoints": 5,
+      "detail": "test script: npm run build && node --test tests/*.test.mjs"
+    },
+    {
+      "id": "package:lint",
+      "label": "Lint script",
+      "status": "pass",
+      "points": 3,
+      "maxPoints": 3,
+      "detail": "lint script: tsc -p tsconfig.json --noEmit"
+    },
+    {
+      "id": "package:private",
+      "label": "Public package readiness",
+      "status": "pass",
+      "points": 3,
+      "maxPoints": 3,
+      "detail": "package is not marked private."
+    },
+    {
+      "id": "security:secret-scan",
+      "label": "Secret and sensitive file scan",
+      "status": "pass",
+      "points": 25,
+      "maxPoints": 25,
+      "detail": "Scanned 43 text files. Critical/high findings=0, medium findings=0."
+    },
+    {
+      "id": "git:repo",
+      "label": "Git repository",
+      "status": "pass",
+      "points": 5,
+      "maxPoints": 5,
+      "detail": "Repository is under git."
+    },
+    {
+      "id": "git:remote",
+      "label": "Remote origin",
+      "status": "pass",
+      "points": 3,
+      "maxPoints": 3,
+      "detail": "origin: git@github.com:ts370102633-hue/maintainer-radar.git"
+    },
+    {
+      "id": "git:release-tag",
+      "label": "Release tag",
+      "status": "pass",
+      "points": 4,
+      "maxPoints": 4,
+      "detail": "At least one git tag exists."
+    },
+    {
+      "id": "git:history",
+      "label": "Commit history",
+      "status": "warn",
+      "points": 1,
+      "maxPoints": 3,
+      "detail": "1 commits detected."
+    },
+    {
+      "id": "ci:github-actions",
+      "label": "GitHub Actions workflow",
+      "status": "pass",
+      "points": 5,
+      "maxPoints": 5,
+      "detail": ".github/workflows is present."
+    },
+    {
+      "id": "release:notes",
+      "label": "Release notes surface",
+      "status": "pass",
+      "points": 5,
+      "maxPoints": 5,
+      "detail": "Release notes or changelog found."
+    },
+    {
+      "id": "release:roadmap",
+      "label": "Roadmap",
+      "status": "pass",
+      "points": 3,
+      "maxPoints": 3,
+      "detail": "docs/roadmap.md found."
+    }
+  ],
+  "findings": [],
+  "tasks": [],
+  "metadata": {
+    "Documentation": {},
+    "Build and package": {
+      "packageName": "maintainer-radar",
+      "version": "0.1.0"
+    },
+    "Security and privacy": {
+      "scannedFiles": 46,
+      "scannedTextFiles": 43
+    },
+    "Git": {
+      "remote": "git@github.com:ts370102633-hue/maintainer-radar.git",
+      "commitCount": 1
+    },
+    "CI": {},
+    "Release readiness": {}
+  }
+}

@@ -36,7 +36,8 @@ test("runScan detects obvious secret patterns", async () => {
   const dir = await mkdtemp(path.join(os.tmpdir(), "maintainer-radar-secret-"));
   try {
     await writeFile(path.join(dir, "README.md"), "Usage and maintainer workflow.");
-    await writeFile(path.join(dir, "config.txt"), "OPENAI_API_KEY=sk-testtesttesttesttesttesttest");
+    const fakeKey = "sk-" + "test".repeat(8);
+    await writeFile(path.join(dir, "config.txt"), `OPENAI_API_KEY=${fakeKey}`);
     const manifest = await runScan({ repoPath: dir, outputPath: path.join(dir, "report") });
     assert.equal(manifest.findings.some((finding) => finding.id.includes("openai-key")), true);
   } finally {
