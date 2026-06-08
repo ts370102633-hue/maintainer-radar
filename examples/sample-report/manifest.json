@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-08T12:04:11.474Z",
+  "generatedAt": "2026-06-08T12:05:09.168Z",
   "repoPath": "/Users/shendekun/maintainer-radar",
   "score": {
-    "total": 99,
+    "total": 100,
     "grade": "ready",
     "buckets": [
       {
@@ -22,7 +22,7 @@
       },
       {
         "name": "Git",
-        "score": 14,
+        "score": 15,
         "maxScore": 15
       },
       {
@@ -153,10 +153,10 @@
     {
       "id": "git:history",
       "label": "Commit history",
-      "status": "warn",
-      "points": 2,
+      "status": "pass",
+      "points": 3,
       "maxPoints": 3,
-      "detail": "2 commits detected."
+      "detail": "3 commits detected."
     },
     {
       "id": "ci:github-actions",
@@ -197,7 +197,7 @@
     },
     "Git": {
       "remote": "git@github.com:ts370102633-hue/maintainer-radar.git",
-      "commitCount": 2
+      "commitCount": 3
     },
     "CI": {},
     "Release readiness": {}
