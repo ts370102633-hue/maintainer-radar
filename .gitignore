@@ -1,0 +1,8 @@
+node_modules/
+dist/
+maintainer-radar-report/
+examples/self-scan-report/
+.DS_Store
+.env
+*.log
+coverage/

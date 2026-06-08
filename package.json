@@ -1,0 +1,40 @@
+{
+  "name": "maintainer-radar",
+  "version": "0.1.0",
+  "description": "Local-first repository health and OSS readiness reports for open-source maintainers.",
+  "type": "module",
+  "bin": {
+    "maintainer-radar": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CONTRIBUTING.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "scan": "node dist/cli.js scan .",
+    "example": "node dist/cli.js scan . --out examples/self-scan-report"
+  },
+  "keywords": [
+    "open-source",
+    "maintainer",
+    "repository-health",
+    "security",
+    "release-readiness",
+    "codex"
+  ],
+  "author": "ts370102633-hue",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
