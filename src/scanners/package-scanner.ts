@@ -1,6 +1,6 @@
 import path from "node:path";
 import type { CheckResult, Finding, ScannerContext, ScannerResult } from "../types.js";
-import { readTextIfExists } from "../utils/files.js";
+import { exists, readTextIfExists } from "../utils/files.js";
 
 export async function scanPackage(context: ScannerContext): Promise<ScannerResult> {
   const packagePath = path.join(context.repoPath, "package.json");
@@ -9,6 +9,27 @@ export async function scanPackage(context: ScannerContext): Promise<ScannerResul
   const findings: Finding[] = [];
 
   if (!text) {
+    const hasPythonManifest =
+      await exists(path.join(context.repoPath, "pyproject.toml")) ||
+      await exists(path.join(context.repoPath, "requirements.txt")) ||
+      await exists(path.join(context.repoPath, "setup.py"));
+    const hasGoManifest = await exists(path.join(context.repoPath, "go.mod"));
+
+    if (hasPythonManifest || hasGoManifest) {
+      return {
+        name: "Build and package",
+        checks: [{
+          id: "package:skipped-non-node",
+          label: "Node package manifest",
+          status: "pass",
+          points: 0,
+          maxPoints: 0,
+          detail: "No package.json found; Node package checks were skipped because a Python or Go manifest was detected.",
+        }],
+        findings: [],
+      };
+    }
+
     return {
       name: "Build and package",
       checks: [{

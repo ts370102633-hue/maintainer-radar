@@ -1,6 +1,6 @@
 {
   "name": "maintainer-radar",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Local-first repository health and OSS readiness reports for open-source maintainers.",
   "type": "module",
   "bin": {
@@ -16,6 +16,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "lint": "tsc -p tsconfig.json --noEmit",
+    "prepare": "npm run build",
+    "prepack": "npm run build",
     "test": "npm run build && node --test tests/*.test.mjs",
     "scan": "node dist/cli.js scan .",
     "example": "node dist/cli.js scan . --out examples/self-scan-report"

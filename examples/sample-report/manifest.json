@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T02:01:53.352Z",
+  "generatedAt": "2026-06-09T02:24:03.419Z",
   "repoPath": "/Users/shendekun/maintainer-radar",
   "score": {
     "total": 100,
@@ -169,7 +169,7 @@
       "status": "pass",
       "points": 3,
       "maxPoints": 3,
-      "detail": "5 commits detected."
+      "detail": "6 commits detected."
     },
     {
       "id": "ci:github-actions",
@@ -203,7 +203,7 @@
     "Documentation": {},
     "Build and package": {
       "packageName": "maintainer-radar",
-      "version": "0.1.2"
+      "version": "0.1.3"
     },
     "Ecosystem support": {
       "ecosystems": [
@@ -223,7 +223,7 @@
     },
     "Git": {
       "remote": "git@github.com:ts370102633-hue/maintainer-radar.git",
-      "commitCount": 5
+      "commitCount": 6
     },
     "CI": {},
     "Release readiness": {}

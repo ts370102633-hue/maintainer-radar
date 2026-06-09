@@ -35,7 +35,7 @@ Grade: **ready**
 | Git repository | pass | 5/5 | Repository is under git. |
 | Remote origin | pass | 3/3 | origin: git@github.com:ts370102633-hue/maintainer-radar.git |
 | Release tag | pass | 4/4 | At least one git tag exists. |
-| Commit history | pass | 3/3 | 5 commits detected. |
+| Commit history | pass | 3/3 | 6 commits detected. |
 | GitHub Actions workflow | pass | 5/5 | .github/workflows is present. |
 | Release notes surface | pass | 5/5 | Release notes or changelog found. |
 | Roadmap | pass | 3/3 | docs/roadmap.md found. |

@@ -61,8 +61,11 @@ test("runScan detects Python and Go ecosystem readiness signals", async () => {
 
     const manifest = await runScan({ repoPath: dir, outputPath: path.join(dir, "report") });
     const ecosystemChecks = manifest.checks.filter((check) => check.id.startsWith("ecosystem:"));
+    const packageChecks = manifest.checks.filter((check) => check.id.startsWith("package:"));
     assert.equal(ecosystemChecks.some((check) => check.id === "ecosystem:python" && check.status === "pass"), true);
     assert.equal(ecosystemChecks.some((check) => check.id === "ecosystem:go" && check.status === "pass"), true);
+    assert.equal(packageChecks.some((check) => check.id === "package:skipped-non-node" && check.maxPoints === 0), true);
+    assert.equal(packageChecks.some((check) => check.id === "package:manifest" && check.status === "warn"), false);
     assert.deepEqual(manifest.metadata["Ecosystem support"], {
       ecosystems: ["python", "go"],
       files: {

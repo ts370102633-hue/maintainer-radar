@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.3 - 2026-06-09
+
+- Skip Node package checks without a score penalty when Python or Go manifests are detected.
+- Add regression coverage so Python/Go repositories are not marked down for missing `package.json`.
+- Document the GitHub install path before npm registry publication.
+- Refresh the application draft with current public maintenance evidence.
+
 ## v0.1.2 - 2026-06-09
 
 - Add ecosystem detection for Node.js, Python, and Go projects.

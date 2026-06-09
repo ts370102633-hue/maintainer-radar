@@ -19,6 +19,22 @@ AI coding agent.
 
 ## Quick Start
 
+Run the current public source release from GitHub:
+
+```bash
+npx --yes github:ts370102633-hue/maintainer-radar scan .
+```
+
+Or install it globally from GitHub:
+
+```bash
+npm install -g github:ts370102633-hue/maintainer-radar
+maintainer-radar scan .
+```
+
+The npm registry package is planned after maintainer account login. Until then,
+use the GitHub install path above or run from a local clone:
+
 ```bash
 npm install
 npm run build
@@ -112,7 +128,7 @@ npm run example
 
 ## Ecosystem Support
 
-v0.1.2 detects:
+v0.1.3 detects:
 
 - Node.js through `package.json`
 - Python through `pyproject.toml`, `requirements.txt`, or `setup.py`
@@ -120,6 +136,8 @@ v0.1.2 detects:
 
 Python and Go projects receive ecosystem-specific readiness checks so
 maintainers can see whether dependency and test/build signals are present.
+Non-Node projects are not penalized for missing `package.json` when a Python or
+Go manifest is detected.
 
 ## Roadmap
 

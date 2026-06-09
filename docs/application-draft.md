@@ -16,6 +16,10 @@ maintenance tasks. It produces a Markdown report pack that maintainers can use
 before publishing a repository, preparing a release, or handing a project to
 Codex for review and improvement.
 
+As of 2026-06-09, the project has public releases from v0.1.0 through v0.1.3,
+passing CI, public roadmap and maintenance issues, and visible feedback loops
+from issue reports into releases.
+
 ## Why Codex Helps
 
 Codex would help maintain this project by:
@@ -32,6 +36,19 @@ Codex would help maintain this project by:
 Maintainer Radar directly supports maintainer workflows such as issue triage,
 release preparation, security hygiene checks, documentation cleanup, and AI
 handoff packs for coding agents.
+
+Current project evidence:
+
+- v0.1.0 shipped the first local repository health scan and report pack.
+- v0.1.1 added private report mode after maintenance review.
+- v0.1.2 expanded ecosystem support to Python and Go after user feedback.
+- v0.1.3 fixed non-Node scoring and clarified the GitHub install path after audit issue #9.
+- GitHub Actions runs lint and tests on pushes and pull requests.
+- The repo has public comments, closed maintenance issues, release tags, and a changelog.
+
+Data handling is intentionally local-first: repository content is read from the
+maintainer's machine and reports are written locally. Private reports are meant
+for internal use and should not be published without review.
 
 ## Why This Matters
 
