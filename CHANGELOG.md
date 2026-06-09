@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.4 - 2026-06-09
+
+- Normalize the npm `bin` entry so the package can be published and executed from npm.
+- Update quick-start instructions for npm registry usage.
+
 ## v0.1.3 - 2026-06-09
 
 - Skip Node package checks without a score penalty when Python or Go manifests are detected.

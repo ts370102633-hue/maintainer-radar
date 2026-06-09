@@ -19,7 +19,20 @@ AI coding agent.
 
 ## Quick Start
 
-Run the current public source release from GitHub:
+Run from npm:
+
+```bash
+npx maintainer-radar scan .
+```
+
+Or install it globally:
+
+```bash
+npm install -g maintainer-radar
+maintainer-radar scan .
+```
+
+You can also run the current public source release from GitHub:
 
 ```bash
 npx --yes github:ts370102633-hue/maintainer-radar scan .
@@ -32,9 +45,7 @@ npm install -g github:ts370102633-hue/maintainer-radar
 maintainer-radar scan .
 ```
 
-The npm registry package is planned after maintainer account login and publish
-2FA setup. Until then, use the GitHub install path above or run from a local
-clone:
+To run from a local clone:
 
 ```bash
 npm install
@@ -129,7 +140,7 @@ npm run example
 
 ## Ecosystem Support
 
-v0.1.3 detects:
+v0.1.4 detects:
 
 - Node.js through `package.json`
 - Python through `pyproject.toml`, `requirements.txt`, or `setup.py`
