@@ -32,8 +32,9 @@ npm install -g github:ts370102633-hue/maintainer-radar
 maintainer-radar scan .
 ```
 
-The npm registry package is planned after maintainer account login. Until then,
-use the GitHub install path above or run from a local clone:
+The npm registry package is planned after maintainer account login and publish
+2FA setup. Until then, use the GitHub install path above or run from a local
+clone:
 
 ```bash
 npm install
