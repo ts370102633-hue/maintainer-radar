@@ -12,6 +12,7 @@ import { writeReports } from "./reports/markdown-writer.js";
 export type ScanOptions = {
   repoPath: string;
   outputPath?: string;
+  privateReport?: boolean;
 };
 
 export async function runScan(options: ScanOptions): Promise<ReportManifest> {
@@ -32,7 +33,10 @@ export async function runScan(options: ScanOptions): Promise<ReportManifest> {
   const findings = flattenFindings(results);
   const score = calculateHealthScore(results);
   const tasks = createMaintainerTasks(findings, score);
-  const metadata = Object.fromEntries(results.map((result) => [result.name, result.metadata ?? {}]));
+  const metadata = {
+    privateReport: options.privateReport === true,
+    ...Object.fromEntries(results.map((result) => [result.name, result.metadata ?? {}])),
+  };
 
   const manifest: ReportManifest = {
     generatedAt: context.now.toISOString(),

@@ -37,7 +37,7 @@ export const sensitiveFilePatterns = [
   /cookie/i,
   /credential/i,
   /token/i,
-  /private/i,
+  /(?:id_rsa|id_dsa|id_ecdsa|id_ed25519|private[_-]?key|\.pem$|\.key$)/i,
   /workspace\.json$/i,
   /positions\.json$/i,
   /portfolio/i,

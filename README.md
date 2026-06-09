@@ -34,7 +34,7 @@ maintainer-radar-report/01-summary.md
 ## CLI Usage
 
 ```bash
-maintainer-radar scan [repo-path] [--out report-dir] [--json]
+maintainer-radar scan [repo-path] [--out report-dir] [--json] [--private]
 ```
 
 Examples:
@@ -42,6 +42,7 @@ Examples:
 ```bash
 maintainer-radar scan .
 maintainer-radar scan /path/to/repo --out maintainer-radar-report
+maintainer-radar scan /path/to/private-repo --out private-report --private
 maintainer-radar scan . --json
 ```
 
@@ -59,6 +60,15 @@ maintainer-radar-report/
   06-maintainer-tasks.md
   manifest.json
 ```
+
+When `--private` is used, the report also includes:
+
+```text
+00-private-report-notice.md
+```
+
+Use private mode for internal repositories, customer projects, portfolio tools,
+or anything that may contain local paths or sensitive operational context.
 
 ## What It Checks
 

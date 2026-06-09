@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.1 - 2026-06-09
+
+- Add `--private` scan mode for internal repositories.
+- Add a `00-private-report-notice.md` output file in private mode.
+- Add test coverage for private report notice generation.
+
 ## v0.1.0 - 2026-06-08
 
 - Add local-first repository health scan.

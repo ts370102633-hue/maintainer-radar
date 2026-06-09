@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdtemp, rm, writeFile, mkdir } from "node:fs/promises";
+import { access, mkdtemp, rm, writeFile, mkdir } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -27,6 +27,18 @@ test("runScan scores a minimal OSS-ready repo and writes reports", async () => {
     const manifest = await runScan({ repoPath: dir, outputPath: out });
     assert.equal(manifest.score.grade === "ready" || manifest.score.grade === "usable", true);
     assert.equal(manifest.findings.some((finding) => finding.severity === "critical"), false);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
+test("runScan writes a private report notice when privateReport is enabled", async () => {
+  const dir = await mkdtemp(path.join(os.tmpdir(), "maintainer-radar-private-"));
+  const out = path.join(dir, "private-report");
+  try {
+    await writeFile(path.join(dir, "README.md"), "Install. Usage. Maintainer workflow.");
+    await runScan({ repoPath: dir, outputPath: out, privateReport: true });
+    await access(path.join(out, "00-private-report-notice.md"));
   } finally {
     await rm(dir, { recursive: true, force: true });
   }

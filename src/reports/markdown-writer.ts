@@ -4,7 +4,7 @@ import type { CheckResult, Finding, HealthScore, MaintainerTask, ReportManifest 
 
 export async function writeReports(outputPath: string, manifest: ReportManifest): Promise<void> {
   await fs.mkdir(outputPath, { recursive: true });
-  await Promise.all([
+  const writes = [
     write("01-summary.md", summary(manifest)),
     write("02-health-score.md", healthScore(manifest.score, manifest.checks)),
     write("03-security-risks.md", securityRisks(manifest.findings)),
@@ -12,11 +12,42 @@ export async function writeReports(outputPath: string, manifest: ReportManifest)
     write("05-release-readiness.md", releaseReadiness(manifest.checks, manifest.findings)),
     write("06-maintainer-tasks.md", maintainerTasks(manifest.tasks)),
     write("manifest.json", JSON.stringify(manifest, null, 2)),
-  ]);
+  ];
+  if (manifest.metadata.privateReport === true) {
+    writes.unshift(write("00-private-report-notice.md", privateReportNotice(manifest)));
+  }
+  await Promise.all(writes);
 
   async function write(file: string, content: string) {
     await fs.writeFile(path.join(outputPath, file), content, "utf8");
   }
+}
+
+function privateReportNotice(manifest: ReportManifest): string {
+  return `# Private Report Notice
+
+This report was generated in private scan mode.
+
+Repository:
+
+\`\`\`text
+${manifest.repoPath}
+\`\`\`
+
+## Do Not Publish Without Review
+
+This report may contain local paths, sensitive-file findings, customer or project
+context, portfolio context, or other private operational details.
+
+Before committing, sharing, or publishing this report:
+
+1. Review every Markdown file and \`manifest.json\`.
+2. Remove private paths and customer/project names if they are not meant to be public.
+3. Redact security findings that reveal sensitive operational structure.
+4. Prefer publishing only an aggregate score or manually reviewed excerpt.
+
+Generated at: ${manifest.generatedAt}
+`;
 }
 
 function summary(manifest: ReportManifest): string {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-08T12:05:09.168Z",
+  "generatedAt": "2026-06-09T01:34:18.286Z",
   "repoPath": "/Users/shendekun/maintainer-radar",
   "score": {
     "total": 100,
@@ -124,7 +124,7 @@
       "status": "pass",
       "points": 25,
       "maxPoints": 25,
-      "detail": "Scanned 43 text files. Critical/high findings=0, medium findings=0."
+      "detail": "Scanned 44 text files. Critical/high findings=0, medium findings=0."
     },
     {
       "id": "git:repo",
@@ -156,7 +156,7 @@
       "status": "pass",
       "points": 3,
       "maxPoints": 3,
-      "detail": "3 commits detected."
+      "detail": "4 commits detected."
     },
     {
       "id": "ci:github-actions",
@@ -186,18 +186,19 @@
   "findings": [],
   "tasks": [],
   "metadata": {
+    "privateReport": false,
     "Documentation": {},
     "Build and package": {
       "packageName": "maintainer-radar",
-      "version": "0.1.0"
+      "version": "0.1.1"
     },
     "Security and privacy": {
-      "scannedFiles": 46,
-      "scannedTextFiles": 43
+      "scannedFiles": 47,
+      "scannedTextFiles": 44
     },
     "Git": {
       "remote": "git@github.com:ts370102633-hue/maintainer-radar.git",
-      "commitCount": 3
+      "commitCount": 4
     },
     "CI": {},
     "Release readiness": {}
