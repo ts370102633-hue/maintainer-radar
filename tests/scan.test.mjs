@@ -44,6 +44,40 @@ test("runScan writes a private report notice when privateReport is enabled", asy
   }
 });
 
+test("runScan detects Python and Go ecosystem readiness signals", async () => {
+  const dir = await mkdtemp(path.join(os.tmpdir(), "maintainer-radar-ecosystems-"));
+  try {
+    await writeFile(path.join(dir, "README.md"), "Install. Usage. Maintainer workflow.");
+    await writeFile(path.join(dir, "pyproject.toml"), [
+      "[build-system]",
+      'requires = ["setuptools"]',
+      'build-backend = "setuptools.build_meta"',
+      "",
+      "[tool.pytest.ini_options]",
+      'testpaths = ["tests"]',
+    ].join("\n"));
+    await writeFile(path.join(dir, "go.mod"), "module example.com/maintainer-radar-sample\n\ngo 1.22\n");
+    await writeFile(path.join(dir, "go.sum"), "");
+
+    const manifest = await runScan({ repoPath: dir, outputPath: path.join(dir, "report") });
+    const ecosystemChecks = manifest.checks.filter((check) => check.id.startsWith("ecosystem:"));
+    assert.equal(ecosystemChecks.some((check) => check.id === "ecosystem:python" && check.status === "pass"), true);
+    assert.equal(ecosystemChecks.some((check) => check.id === "ecosystem:go" && check.status === "pass"), true);
+    assert.deepEqual(manifest.metadata["Ecosystem support"], {
+      ecosystems: ["python", "go"],
+      files: {
+        packageJson: false,
+        pyprojectToml: true,
+        requirementsTxt: false,
+        setupPy: false,
+        goMod: true,
+      },
+    });
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
 test("runScan detects obvious secret patterns", async () => {
   const dir = await mkdtemp(path.join(os.tmpdir(), "maintainer-radar-secret-"));
   try {

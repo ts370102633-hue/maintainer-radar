@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T01:34:18.286Z",
+  "generatedAt": "2026-06-09T02:01:53.352Z",
   "repoPath": "/Users/shendekun/maintainer-radar",
   "score": {
     "total": 100,
@@ -14,6 +14,11 @@
         "name": "Build and package",
         "score": 16,
         "maxScore": 16
+      },
+      {
+        "name": "Ecosystem support",
+        "score": 2,
+        "maxScore": 2
       },
       {
         "name": "Security and privacy",
@@ -119,12 +124,20 @@
       "detail": "package is not marked private."
     },
     {
+      "id": "ecosystem:detected",
+      "label": "Project ecosystem detection",
+      "status": "pass",
+      "points": 2,
+      "maxPoints": 2,
+      "detail": "Detected ecosystems: node."
+    },
+    {
       "id": "security:secret-scan",
       "label": "Secret and sensitive file scan",
       "status": "pass",
       "points": 25,
       "maxPoints": 25,
-      "detail": "Scanned 44 text files. Critical/high findings=0, medium findings=0."
+      "detail": "Scanned 45 text files. Critical/high findings=0, medium findings=0."
     },
     {
       "id": "git:repo",
@@ -156,7 +169,7 @@
       "status": "pass",
       "points": 3,
       "maxPoints": 3,
-      "detail": "4 commits detected."
+      "detail": "5 commits detected."
     },
     {
       "id": "ci:github-actions",
@@ -190,15 +203,27 @@
     "Documentation": {},
     "Build and package": {
       "packageName": "maintainer-radar",
-      "version": "0.1.1"
+      "version": "0.1.2"
+    },
+    "Ecosystem support": {
+      "ecosystems": [
+        "node"
+      ],
+      "files": {
+        "packageJson": true,
+        "pyprojectToml": false,
+        "requirementsTxt": false,
+        "setupPy": false,
+        "goMod": false
+      }
     },
     "Security and privacy": {
-      "scannedFiles": 47,
-      "scannedTextFiles": 44
+      "scannedFiles": 48,
+      "scannedTextFiles": 45
     },
     "Git": {
       "remote": "git@github.com:ts370102633-hue/maintainer-radar.git",
-      "commitCount": 4
+      "commitCount": 5
     },
     "CI": {},
     "Release readiness": {}

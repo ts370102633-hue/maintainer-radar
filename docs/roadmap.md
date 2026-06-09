@@ -12,7 +12,8 @@
 ## v0.2.0
 
 - GitHub Action
-- More ecosystem scanners for Python, Rust, Go, and Java
+- More ecosystem scanners for Rust and Java
+- Deeper Python and Go test/build command detection
 - Optional AI summary mode
 - More precise secret redaction
 

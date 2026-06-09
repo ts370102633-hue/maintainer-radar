@@ -10,6 +10,7 @@ Grade: **ready**
 | --- | ---: |
 | Documentation | 28/28 |
 | Build and package | 16/16 |
+| Ecosystem support | 2/2 |
 | Security and privacy | 25/25 |
 | Git | 15/15 |
 | CI | 5/5 |
@@ -29,11 +30,12 @@ Grade: **ready**
 | Test script | pass | 5/5 | test script: npm run build && node --test tests/*.test.mjs |
 | Lint script | pass | 3/3 | lint script: tsc -p tsconfig.json --noEmit |
 | Public package readiness | pass | 3/3 | package is not marked private. |
-| Secret and sensitive file scan | pass | 25/25 | Scanned 44 text files. Critical/high findings=0, medium findings=0. |
+| Project ecosystem detection | pass | 2/2 | Detected ecosystems: node. |
+| Secret and sensitive file scan | pass | 25/25 | Scanned 45 text files. Critical/high findings=0, medium findings=0. |
 | Git repository | pass | 5/5 | Repository is under git. |
 | Remote origin | pass | 3/3 | origin: git@github.com:ts370102633-hue/maintainer-radar.git |
 | Release tag | pass | 4/4 | At least one git tag exists. |
-| Commit history | pass | 3/3 | 4 commits detected. |
+| Commit history | pass | 3/3 | 5 commits detected. |
 | GitHub Actions workflow | pass | 5/5 | .github/workflows is present. |
 | Release notes surface | pass | 5/5 | Release notes or changelog found. |
 | Roadmap | pass | 3/3 | docs/roadmap.md found. |

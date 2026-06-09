@@ -2,6 +2,7 @@ import path from "node:path";
 import type { ReportManifest, ScannerContext } from "./types.js";
 import { scanDocs } from "./scanners/docs-scanner.js";
 import { scanPackage } from "./scanners/package-scanner.js";
+import { scanEcosystem } from "./scanners/ecosystem-scanner.js";
 import { scanSecurity } from "./scanners/security-scanner.js";
 import { scanGit } from "./scanners/git-scanner.js";
 import { scanCi } from "./scanners/ci-scanner.js";
@@ -23,6 +24,7 @@ export async function runScan(options: ScanOptions): Promise<ReportManifest> {
   const results = await Promise.all([
     scanDocs(context),
     scanPackage(context),
+    scanEcosystem(context),
     scanSecurity(context),
     scanGit(context),
     scanCi(context),

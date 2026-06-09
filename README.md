@@ -74,6 +74,7 @@ or anything that may contain local paths or sensitive operational context.
 
 - README, LICENSE, SECURITY.md, CONTRIBUTING.md, and .env.example
 - build, test, lint, and public package signals
+- ecosystem detection for Node.js, Python, and Go projects
 - Git repository, origin, release tags, and commit history
 - GitHub Actions workflow presence
 - release notes and roadmap presence
@@ -108,6 +109,17 @@ npm run build
 npm test
 npm run example
 ```
+
+## Ecosystem Support
+
+v0.1.2 detects:
+
+- Node.js through `package.json`
+- Python through `pyproject.toml`, `requirements.txt`, or `setup.py`
+- Go through `go.mod`
+
+Python and Go projects receive ecosystem-specific readiness checks so
+maintainers can see whether dependency and test/build signals are present.
 
 ## Roadmap
 

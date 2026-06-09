@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.2 - 2026-06-09
+
+- Add ecosystem detection for Node.js, Python, and Go projects.
+- Add Python readiness checks for dependency manifests, test signals, and build backend signals.
+- Add Go readiness checks for `go.mod` module declarations and `go.sum`.
+- Add test coverage for Python and Go ecosystem detection.
+
 ## v0.1.1 - 2026-06-09
 
 - Add `--private` scan mode for internal repositories.
