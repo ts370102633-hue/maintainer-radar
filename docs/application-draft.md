@@ -10,15 +10,15 @@ I am the primary maintainer of Maintainer Radar.
 
 ## Project Summary
 
-Maintainer Radar is a local-first open-source CLI that helps maintainers assess
-repository health, security hygiene, release readiness, and AI-assisted
-maintenance tasks. It produces a Markdown report pack that maintainers can use
-before publishing a repository, preparing a release, or handing a project to
-Codex for review and improvement.
+Maintainer Radar is a local-first open-source CLI and GitHub Action that helps
+maintainers assess repository health, security hygiene, release readiness, and
+AI-assisted maintenance tasks. It produces a Markdown report pack that
+maintainers can use before publishing a repository, preparing a release, or
+handing a project to Codex for review and improvement.
 
-As of 2026-06-09, the project has public releases from v0.1.0 through v0.1.3,
-passing CI, public roadmap and maintenance issues, and visible feedback loops
-from issue reports into releases.
+As of 2026-06-09, the project has public releases from v0.1.0 through v0.1.5,
+an npm package, passing CI, public roadmap and maintenance issues, and visible
+feedback loops from issue reports into releases.
 
 ## Why Codex Helps
 
@@ -43,6 +43,8 @@ Current project evidence:
 - v0.1.1 added private report mode after maintenance review.
 - v0.1.2 expanded ecosystem support to Python and Go after user feedback.
 - v0.1.3 fixed non-Node scoring and clarified the GitHub install path after audit issue #9.
+- v0.1.4 published the CLI to npm so maintainers can run `npx maintainer-radar scan .`.
+- v0.1.5 added GitHub Action artifact mode after public feedback on issue #1.
 - GitHub Actions runs lint and tests on pushes and pull requests.
 - The repo has public comments, closed maintenance issues, release tags, and a changelog.
 

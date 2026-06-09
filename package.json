@@ -1,6 +1,6 @@
 {
   "name": "maintainer-radar",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Local-first repository health and OSS readiness reports for open-source maintainers.",
   "type": "module",
   "bin": {
@@ -8,6 +8,9 @@
   },
   "files": [
     "dist",
+    "action.yml",
+    "docs/github-action.md",
+    "examples/workflows/maintainer-radar.yml",
     "README.md",
     "LICENSE",
     "SECURITY.md",

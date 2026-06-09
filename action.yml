@@ -1,0 +1,51 @@
+name: Maintainer Radar
+description: Run a local-first repository health scan and upload the Markdown report pack as a GitHub Actions artifact.
+author: ts370102633-hue
+
+inputs:
+  repo-path:
+    description: Repository path to scan.
+    required: false
+    default: .
+  output-dir:
+    description: Directory where the report pack will be written.
+    required: false
+    default: maintainer-radar-report
+  private:
+    description: Add a private report notice for internal repositories.
+    required: false
+    default: "false"
+  upload-artifact:
+    description: Upload the generated report directory as a GitHub Actions artifact.
+    required: false
+    default: "true"
+  artifact-name:
+    description: Artifact name for the generated report pack.
+    required: false
+    default: maintainer-radar-report
+
+outputs:
+  report-dir:
+    description: Directory containing the generated Maintainer Radar report.
+    value: ${{ inputs.output-dir }}
+
+runs:
+  using: composite
+  steps:
+    - name: Run Maintainer Radar
+      shell: bash
+      run: |
+        set -euo pipefail
+        args=("scan" "${{ inputs.repo-path }}" "--out" "${{ inputs.output-dir }}")
+        if [ "${{ inputs.private }}" = "true" ]; then
+          args+=("--private")
+        fi
+        npx --yes maintainer-radar@latest "${args[@]}"
+
+    - name: Upload Maintainer Radar report
+      if: ${{ inputs.upload-artifact == 'true' }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ inputs.artifact-name }}
+        path: ${{ inputs.output-dir }}
+        if-no-files-found: error

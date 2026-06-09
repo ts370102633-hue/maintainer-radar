@@ -11,7 +11,7 @@
 
 ## v0.2.0
 
-- GitHub Action
+- GitHub Action summary comments
 - More ecosystem scanners for Rust and Java
 - Deeper Python and Go test/build command detection
 - Optional AI summary mode

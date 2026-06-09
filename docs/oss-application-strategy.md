@@ -20,10 +20,12 @@ programs that value real maintenance workflows.
 - Example generated report.
 - Roadmap issues.
 - Passing build and test.
+- Published npm package.
+- GitHub Action artifact workflow.
 
 ## Application Framing
 
-I maintain Maintainer Radar, a local-first open-source CLI that helps
+I maintain Maintainer Radar, a local-first open-source CLI and GitHub Action that helps
 maintainers assess repository health, security hygiene, release readiness, and
 AI-assisted maintenance tasks. Codex would help me review pull requests, improve
 scanner rules, generate documentation, and maintain release workflows for

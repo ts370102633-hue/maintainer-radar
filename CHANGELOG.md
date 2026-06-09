@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.5 - 2026-06-09
+
+- Add GitHub Action artifact mode for pull request and release-readiness workflows.
+- Add example workflow and GitHub Action documentation.
+- Add test coverage for Action metadata and artifact-mode wiring.
+- Refresh application materials with npm and Action workflow evidence.
+
 ## v0.1.4 - 2026-06-09
 
 - Normalize the npm `bin` entry so the package can be published and executed from npm.

@@ -59,6 +59,21 @@ After scanning, open:
 maintainer-radar-report/01-summary.md
 ```
 
+## GitHub Action
+
+Maintainer Radar can run on pull requests or release branches and upload the
+Markdown report pack as a GitHub Actions artifact:
+
+```yaml
+- uses: ts370102633-hue/maintainer-radar@v0.1.5
+  with:
+    output-dir: maintainer-radar-report
+    artifact-name: maintainer-radar-report
+```
+
+See [docs/github-action.md](docs/github-action.md) for the full workflow
+example and private repository guidance.
+
 ## CLI Usage
 
 ```bash
@@ -140,7 +155,7 @@ npm run example
 
 ## Ecosystem Support
 
-v0.1.4 detects:
+v0.1.5 detects:
 
 - Node.js through `package.json`
 - Python through `pyproject.toml`, `requirements.txt`, or `setup.py`
@@ -153,8 +168,8 @@ Go manifest is detected.
 
 ## Roadmap
 
-- GitHub Action mode
-- richer language ecosystem detection
+- richer ecosystem detection for Rust and Java
+- GitHub Action summary comments
 - optional AI summary generation
 - issue and pull request triage inputs
 - release note drafting
